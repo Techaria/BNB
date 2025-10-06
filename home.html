@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModernBnB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav h1 {
+      color: #1e88e5;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1e88e5;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    /* Listings */
+    .listings {
+      padding: 6rem 2rem 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .listings h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #1e88e5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .card-content .price {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #1e88e5;
+    }
+
+    /* Booking Form */
+    .booking {
+      background: #1e88e5;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .booking h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form {
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form input, .form select {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .form button {
+      background: white;
+      color: #1e88e5;
+      font-weight: bold;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form button:hover {
+      background: #e3f2fd;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>ModernBnB</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#booking">Book</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Find Your Perfect Stay</h2>
+  </section>
+
+  <section class="listings" id="listings">
+    <h3>Popular Stays</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80" alt="BnB">
+        <div class="card-content">
+          <h4>Seaside Villa</h4>
+          <p>Relax in a cozy villa overlooking the ocean.</p>
+          <div class="price">$120 / night</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="BnB">
+        <div class="card-content">
+          <h4>Mountain Cabin</h4>
+          <p>Enjoy peace and nature in our rustic cabin retreat.</p>
+          <div class="price">$95 / night</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d6091c9b65b9?auto=format&fit=crop&w=800&q=80" alt="BnB">
+        <div class="card-content">
+          <h4>City Apartment</h4>
+          <p>Modern apartment located in the heart of the city.</p>
+          <div class="price">$150 / night</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <h3>Book Your Stay</h3>
+    <form class="form" id="bookingForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <select required>
+        <option value="">Select Location</option>
+        <option value="seaside">Seaside Villa</option>
+        <option value="mountain">Mountain Cabin</option>
+        <option value="city">City Apartment</option>
+      </select>
+      <input type="date" required>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 ModernBnB. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Booking form handler
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Booking submitted successfully!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
